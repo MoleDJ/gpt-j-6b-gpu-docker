@@ -8,6 +8,7 @@ RUN wget -c https://mystic.the-eye.eu/public/AI/GPT-J-6B/step_383500_slim.tar.zs
   && rm step_383500_slim.tar.zstd
 RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb\
   && dpkg -i cuda-keyring_1.0-1_all.deb
+RUN rm -rf /usr/lib/x86_64-linux-gnu/libnvidia* /usr/lib/x86_64-linux-gnu/libcuda*
 RUN git clone https://github.com/kingoflolz/mesh-transformer-jax.git
 RUN pip3 install -r mesh-transformer-jax/requirements.txt
 RUN pip3 install torch mesh-transformer-jax/ jax==0.2.12 jaxlib==0.1.68 -f https://storage.googleapis.com/jax-releases/jax_releases.html
